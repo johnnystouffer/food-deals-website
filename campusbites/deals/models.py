@@ -29,7 +29,6 @@ class Post(models.Model):
 
     # posted
     submission_time = models.DateTimeField(auto_now_add=True)
-
     approved = models.BooleanField(default=False)
 
     def __str__(self):

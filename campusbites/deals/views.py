@@ -8,7 +8,6 @@ class PostView(viewsets.ModelViewSet):
     queryset = Post.objects.filter(approved=True)
     serializer_class = PostSerializer
 
-
     def get_permissions(self):
         if self.action == 'create':
             # Only allow admin users to create deals

@@ -10,8 +10,8 @@ class PostView(viewsets.ModelViewSet):
 
     def get_permissions(self):
         if self.action == 'create':
-            # Only allow admin users to create deals
-            return [permissions.IsAdminUser()]
+            # Only allow signed in users to create deals
+            return [permissions.IsAuthenticated()]
         elif self.action in ['update', 'partial_update', 'destroy']:
             # Optionally, restrict update and delete actions
             return [permissions.IsAdminUser()]
